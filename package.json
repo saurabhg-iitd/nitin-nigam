@@ -18,11 +18,12 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro build && tsc && wrangler deploy --dry-run",
-    "deploy": "wrangler deploy"
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "astro": "^5.16.3"
-  },"devDependencies": {
+  },
+  "devDependencies": {
     "wrangler": "4.21.x"
   }
 }
