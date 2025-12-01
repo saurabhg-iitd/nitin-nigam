@@ -1,11 +1,267 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<main>
+		<!-- Hero Section -->
+		<section class="hero">
+			<div class="hero-content">
+				<h1 class="hero-title">Nitin Nigam</h1>
+				<p class="hero-subtitle">Musician & Guitarist</p>
+				<div class="hero-divider"></div>
+			</div>
+		</section>
+
+		<!-- About Section -->
+		<section class="about">
+			<div class="container">
+				<h2 class="section-title">About</h2>
+				<p class="about-text">
+					Welcome to the official website of Nitin Nigam, a passionate musician and guitarist dedicated to creating beautiful music and sharing the art of guitar with the world.
+				</p>
+			</div>
+		</section>
+
+		<!-- Social Links Section -->
+		<section class="social">
+			<div class="container">
+				<h2 class="section-title">Connect</h2>
+				<div class="social-links">
+					<a 
+						href="https://www.instagram.com/nitinnigam_official/" 
+						target="_blank" 
+						rel="noopener noreferrer"
+						class="social-link instagram"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+							<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+							<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+						</svg>
+						<span>Follow on Instagram</span>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="container">
+				<p>&copy; 2024 Nitin Nigam. All rights reserved.</p>
+			</div>
+		</footer>
+	</main>
 </Layout>
+
+<style>
+	main {
+		min-height: 100vh;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		position: relative;
+		overflow-x: hidden;
+	}
+
+	/* Hero Section */
+	.hero {
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 2rem;
+		position: relative;
+	}
+
+	.hero::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: 
+			radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+			radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+		pointer-events: none;
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 1;
+		max-width: 800px;
+	}
+
+	.hero-title {
+		font-size: clamp(3rem, 8vw, 6rem);
+		font-weight: 700;
+		color: #ffffff;
+		margin: 0;
+		letter-spacing: -0.02em;
+		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+		animation: fadeInUp 0.8s ease-out;
+	}
+
+	.hero-subtitle {
+		font-size: clamp(1.25rem, 3vw, 2rem);
+		color: rgba(255, 255, 255, 0.9);
+		margin: 1rem 0 0 0;
+		font-weight: 300;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		animation: fadeInUp 0.8s ease-out 0.2s both;
+	}
+
+	.hero-divider {
+		width: 100px;
+		height: 3px;
+		background: rgba(255, 255, 255, 0.8);
+		margin: 2rem auto;
+		animation: fadeInUp 0.8s ease-out 0.4s both;
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/* Container */
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	/* About Section */
+	.about {
+		padding: 5rem 0;
+		background: #ffffff;
+	}
+
+	.section-title {
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 600;
+		color: #1a1a1a;
+		margin: 0 0 2rem 0;
+		text-align: center;
+		position: relative;
+		padding-bottom: 1rem;
+	}
+
+	.section-title::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60px;
+		height: 3px;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	}
+
+	.about-text {
+		font-size: 1.125rem;
+		line-height: 1.8;
+		color: #4a4a4a;
+		max-width: 700px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	/* Social Section */
+	.social {
+		padding: 5rem 0;
+		background: #f8f9fa;
+	}
+
+	.social-links {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+		flex-wrap: wrap;
+	}
+
+	.social-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 1rem 2rem;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: #ffffff;
+		text-decoration: none;
+		border-radius: 50px;
+		font-weight: 500;
+		font-size: 1.125rem;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+	}
+
+	.social-link:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+	}
+
+	.social-link:active {
+		transform: translateY(0);
+	}
+
+	.social-link svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	/* Footer */
+	.footer {
+		padding: 2rem 0;
+		background: #1a1a1a;
+		color: rgba(255, 255, 255, 0.7);
+		text-align: center;
+	}
+
+	.footer p {
+		margin: 0;
+		font-size: 0.9rem;
+	}
+
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.hero {
+			min-height: 80vh;
+		}
+
+		.about,
+		.social {
+			padding: 3rem 0;
+		}
+
+		.about-text {
+			font-size: 1rem;
+			padding: 0 1rem;
+		}
+
+		.social-link {
+			padding: 0.875rem 1.5rem;
+			font-size: 1rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero-title {
+			font-size: 2.5rem;
+		}
+
+		.hero-subtitle {
+			font-size: 1rem;
+		}
+
+		.section-title {
+			font-size: 1.75rem;
+		}
+	}
+</style>
