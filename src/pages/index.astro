@@ -4,62 +4,385 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
 	<main>
+		<!-- Navigation -->
+		<nav class="navbar">
+			<div class="container">
+				<div class="nav-content">
+					<div class="logo">Nitin Nigam</div>
+					<ul class="nav-menu">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#lessons">Lessons</a></li>
+						<li><a href="#shows">Shows</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+					<button class="mobile-menu-toggle" aria-label="Toggle menu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+			</div>
+		</nav>
+
 		<!-- Hero Section -->
-		<section class="hero">
-			<div class="hero-content">
-				<h1 class="hero-title">Nitin Nigam</h1>
-				<p class="hero-subtitle">Musician & Guitarist</p>
-				<div class="hero-divider"></div>
-			</div>
-		</section>
-
-		<!-- About Section -->
-		<section class="about">
+		<section id="home" class="hero">
+			<div class="hero-overlay"></div>
 			<div class="container">
-				<h2 class="section-title">About</h2>
-				<p class="about-text">
-					Welcome to the official website of Nitin Nigam, a passionate musician and guitarist dedicated to creating beautiful music and sharing the art of guitar with the world.
-				</p>
-			</div>
-		</section>
-
-		<!-- Social Links Section -->
-		<section class="social">
-			<div class="container">
-				<h2 class="section-title">Connect</h2>
-				<div class="social-links">
-					<a 
-						href="https://www.instagram.com/nitinnigam_official/" 
-						target="_blank" 
-						rel="noopener noreferrer"
-						class="social-link instagram"
-					>
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-							<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-							<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-							<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-						</svg>
-						<span>Follow on Instagram</span>
-					</a>
+				<div class="hero-content">
+					<p class="hero-label">guitarist & musician</p>
+					<h1 class="hero-title">Nitin Nigam</h1>
+					<p class="hero-tagline">Of Light And Shadow</p>
+					<div class="hero-social">
+						<a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-link">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+							</svg>
+						</a>
+						<a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-link">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+							</svg>
+						</a>
+						<a href="https://www.instagram.com/nitinnigam_official/" target="_blank" rel="noopener noreferrer" class="social-icon-link">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+								<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+								<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+							</svg>
+						</a>
+						<a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-link">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+								<polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+							</svg>
+						</a>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Footer -->
-		<footer class="footer">
+		<!-- Roles Section -->
+		<section class="roles">
 			<div class="container">
-				<p>&copy; 2024 Nitin Nigam. All rights reserved.</p>
+				<h2 class="roles-title">Guitarist Performer Composer Educator</h2>
+			</div>
+		</section>
+
+		<!-- Quote Section -->
+		<section class="quote-section">
+			<div class="container">
+				<blockquote class="quote">
+					"Nitin's greatest strength is his ability to separate himself from the crowd that believes intensity goes hand in hand with volume, aggression and excessive effects. He brings a sense of balance and measure to the music that allows him to build tension by contrast, not bombast."
+					<cite>— Music Critic, All About Music</cite>
+				</blockquote>
+			</div>
+		</section>
+
+		<!-- Prestige Award Section -->
+		<section class="award-section">
+			<div class="container">
+				<div class="award-content">
+					<h3 class="award-title">My Prestige Award</h3>
+					<p class="award-text">
+						Nitin's greatest strength is his ability to separate himself from the crowd that believes intensity goes hand in hand with volume, aggression and excessive effects. He brings a sense of balance and measure to the music that allows him to build tension by contrast, not bombast.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- About Me Section -->
+		<section id="about" class="about-section">
+			<div class="container">
+				<h3 class="section-heading">About Me</h3>
+				<div class="about-grid">
+					<div class="about-text-content">
+						<p>
+							Welcome to the official website of <strong>Nitin Nigam</strong>, a passionate musician and guitarist dedicated to creating beautiful music and sharing the art of guitar with the world.
+						</p>
+						<p>
+							With years of experience and a deep love for music, I strive to create melodies that touch hearts and inspire others to discover the beauty of musical expression. My journey in music has been one of constant learning, exploration, and dedication to the craft.
+						</p>
+						<p>
+							Through my performances, compositions, and teaching, I aim to bridge the gap between technical mastery and emotional expression, creating music that resonates with audiences worldwide.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Live & Studio Section -->
+		<section class="live-studio-section">
+			<div class="container">
+				<h3 class="section-heading">Live & Studio</h3>
+				<div class="live-studio-grid">
+					<div class="live-studio-text">
+						<p>
+							Whether performing live on stage or working in the studio, I bring the same passion and dedication to every project. My live performances are known for their energy and emotional depth, while my studio work focuses on capturing the perfect moment and creating timeless recordings.
+						</p>
+						<p>
+							I've had the privilege of performing at various venues and festivals, sharing the stage with talented musicians and connecting with audiences through the universal language of music.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Professional Skills Section -->
+		<section class="skills-section">
+			<div class="container">
+				<h3 class="section-heading">Professional Skills</h3>
+				<div class="skills-grid">
+					<div class="skill-card">
+						<h4 class="skill-title">Music<br>Theory</h4>
+					</div>
+					<div class="skill-card">
+						<h4 class="skill-title">Pentatonic<br>scales</h4>
+					</div>
+					<div class="skill-card">
+						<h4 class="skill-title">Tuning By<br>ear</h4>
+					</div>
+					<div class="skill-card">
+						<h4 class="skill-title">Strumming<br>patterns</h4>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Guitar Lessons Section -->
+		<section id="lessons" class="lessons-section">
+			<div class="container">
+				<h3 class="section-heading">Guitar Lessons</h3>
+				<div class="lessons-content">
+					<p>
+						I offer personalized guitar lessons for students of all levels, from beginners to advanced players. My teaching approach combines technical instruction with creative expression, helping students develop both their skills and their musical voice.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Tab, Techniques & Tips Section -->
+		<section class="tips-section">
+			<div class="container">
+				<h3 class="section-heading">Tab, Techniques & Tips</h3>
+				<div class="tips-content">
+					<p>
+						Explore my collection of guitar tabs, techniques, and tips designed to help you improve your playing. From basic chord progressions to advanced fingerpicking patterns, I share insights from years of experience to help you on your musical journey.
+					</p>
+					<p>
+						Each lesson is crafted with care, focusing on practical application and musical understanding. Whether you're learning your first song or mastering complex solos, these resources are designed to support your growth as a guitarist.
+					</p>
+					<a href="#contact" class="enroll-btn">Enroll</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Next Tours Section -->
+		<section id="shows" class="tours-section">
+			<div class="container">
+				<h3 class="section-heading">Next Tours</h3>
+				<div class="tours-list">
+					<div class="tour-item">
+						<div class="tour-date">
+							<span class="tour-day">23</span>
+							<span class="tour-month">Mar</span>
+						</div>
+						<div class="tour-details">
+							<h4 class="tour-location">Mumbai, India</h4>
+							<p class="tour-venue">Vivamus magna justo, lacinia eget consectetur sed</p>
+						</div>
+						<a href="#contact" class="tour-btn">Buy A Ticket</a>
+					</div>
+					<div class="tour-item">
+						<div class="tour-date">
+							<span class="tour-day">06</span>
+							<span class="tour-month">Jun</span>
+						</div>
+						<div class="tour-details">
+							<h4 class="tour-location">Delhi, India</h4>
+							<p class="tour-venue">Vivamus magna justo, lacinia eget consectetur sed</p>
+						</div>
+						<a href="#contact" class="tour-btn">Buy A Ticket</a>
+					</div>
+					<div class="tour-item">
+						<div class="tour-date">
+							<span class="tour-day">17</span>
+							<span class="tour-month">Aug</span>
+						</div>
+						<div class="tour-details">
+							<h4 class="tour-location">Bangalore, India</h4>
+							<p class="tour-venue">Vivamus magna justo, lacinia eget consectetur sed</p>
+						</div>
+						<a href="#contact" class="tour-btn">Buy A Ticket</a>
+					</div>
+					<div class="tour-item">
+						<div class="tour-date">
+							<span class="tour-day">25</span>
+							<span class="tour-month">Sep</span>
+						</div>
+						<div class="tour-details">
+							<h4 class="tour-location">Pune, India</h4>
+							<p class="tour-venue">Vivamus magna justo, lacinia eget consectetur sed</p>
+						</div>
+						<a href="#contact" class="tour-btn">Buy A Ticket</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Newsletter Section -->
+		<section class="newsletter-section">
+			<div class="container">
+				<h3 class="newsletter-title">Stay In Touch With Me, Get Every Day, New Tabs, Tips & Tricks</h3>
+				<p class="newsletter-subtitle">You'll also get occasional news on tour dates and new music releases.</p>
+				<form class="newsletter-form">
+					<input type="email" placeholder="Email *" required class="newsletter-input" />
+					<button type="submit" class="newsletter-btn">SUBSCRIBE</button>
+				</form>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer id="contact" class="footer">
+			<div class="container">
+				<div class="footer-content">
+					<div class="footer-column">
+						<h4 class="footer-heading">Music</h4>
+						<ul class="footer-list">
+							<li>Pop</li>
+							<li>Blues</li>
+							<li>Jazz</li>
+							<li>Rock</li>
+						</ul>
+					</div>
+					<div class="footer-column">
+						<h4 class="footer-heading">Band</h4>
+						<ul class="footer-list">
+							<li>Various Collaborations</li>
+							<li>Solo Performances</li>
+							<li>Studio Sessions</li>
+							<li>Live Concerts</li>
+						</ul>
+					</div>
+					<div class="footer-column">
+						<h4 class="footer-heading">Contact</h4>
+						<ul class="footer-list">
+							<li>Email: contact@nitinnigam.com</li>
+							<li>Phone: +91 1234 567 890</li>
+							<li>Follow on Instagram</li>
+							<li>Subscribe for updates</li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-nav">
+					<a href="#home">Home</a>
+					<a href="#about">About</a>
+					<a href="#lessons">Lessons</a>
+					<a href="#shows">Shows</a>
+					<a href="#contact">Contact</a>
+				</div>
+				<div class="footer-copyright">
+					<p>Copyright © 2024 Nitin Nigam. All rights reserved.</p>
+				</div>
 			</div>
 		</footer>
 	</main>
 </Layout>
 
 <style>
+	:global(html) {
+		scroll-behavior: smooth;
+	}
+
+	:global(body) {
+		margin: 0;
+		padding: 0;
+	}
+
 	main {
-		min-height: 100vh;
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 		position: relative;
 		overflow-x: hidden;
+	}
+
+	/* Navigation */
+	.navbar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		background: rgba(255, 255, 255, 0.95);
+		backdrop-filter: blur(10px);
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		z-index: 1000;
+		padding: 1rem 0;
+		transition: all 0.3s ease;
+	}
+
+	.nav-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.logo {
+		font-family: 'Playfair Display', serif;
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #1a1a1a;
+	}
+
+	.nav-menu {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		gap: 2rem;
+	}
+
+	.nav-menu a {
+		font-family: 'Inter', sans-serif;
+		text-decoration: none;
+		color: #4a4a4a;
+		font-weight: 500;
+		font-size: 0.95rem;
+		transition: color 0.3s ease;
+		position: relative;
+	}
+
+	.nav-menu a::after {
+		content: '';
+		position: absolute;
+		bottom: -5px;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background: #667eea;
+		transition: width 0.3s ease;
+	}
+
+	.nav-menu a:hover {
+		color: #667eea;
+	}
+
+	.nav-menu a:hover::after {
+		width: 100%;
+	}
+
+	.mobile-menu-toggle {
+		display: none;
+		flex-direction: column;
+		gap: 5px;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 5px;
+	}
+
+	.mobile-menu-toggle span {
+		width: 25px;
+		height: 3px;
+		background: #1a1a1a;
+		transition: all 0.3s ease;
 	}
 
 	/* Hero Section */
@@ -69,66 +392,98 @@ import Layout from '../layouts/Layout.astro';
 		align-items: center;
 		justify-content: center;
 		text-align: center;
-		padding: 2rem;
 		position: relative;
+		background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+		background-size: 200% 200%;
+		animation: gradientShift 20s ease infinite;
+		padding-top: 80px;
 	}
 
-	.hero::before {
-		content: '';
+	@keyframes gradientShift {
+		0%, 100% { background-position: 0% 50%; }
+		50% { background-position: 100% 50%; }
+	}
+
+	.hero-overlay {
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
 		background: 
-			radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-			radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+			radial-gradient(circle at 20% 30%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+			radial-gradient(circle at 80% 70%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
 		pointer-events: none;
 	}
 
 	.hero-content {
 		position: relative;
 		z-index: 1;
-		max-width: 800px;
+		max-width: 900px;
+		padding: 2rem;
+	}
+
+	.hero-label {
+		font-family: 'Inter', sans-serif;
+		font-size: 0.875rem;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		color: rgba(255, 255, 255, 0.7);
+		margin: 0 0 1rem 0;
+		font-weight: 400;
 	}
 
 	.hero-title {
+		font-family: 'Playfair Display', serif;
 		font-size: clamp(3rem, 8vw, 6rem);
 		font-weight: 700;
 		color: #ffffff;
 		margin: 0;
 		letter-spacing: -0.02em;
-		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-		animation: fadeInUp 0.8s ease-out;
+		line-height: 1.1;
 	}
 
-	.hero-subtitle {
+	.hero-tagline {
+		font-family: 'Inter', sans-serif;
 		font-size: clamp(1.25rem, 3vw, 2rem);
 		color: rgba(255, 255, 255, 0.9);
-		margin: 1rem 0 0 0;
+		margin: 1.5rem 0 2rem 0;
 		font-weight: 300;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		animation: fadeInUp 0.8s ease-out 0.2s both;
+		font-style: italic;
+		letter-spacing: 0.05em;
 	}
 
-	.hero-divider {
-		width: 100px;
-		height: 3px;
-		background: rgba(255, 255, 255, 0.8);
-		margin: 2rem auto;
-		animation: fadeInUp 0.8s ease-out 0.4s both;
+	.hero-social {
+		display: flex;
+		justify-content: center;
+		gap: 1.5rem;
+		margin-top: 3rem;
 	}
 
-	@keyframes fadeInUp {
-		from {
-			opacity: 0;
-			transform: translateY(30px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
+	.social-icon-link {
+		width: 45px;
+		height: 45px;
+		border-radius: 50%;
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #ffffff;
+		text-decoration: none;
+		transition: all 0.3s ease;
+	}
+
+	.social-icon-link:hover {
+		background: rgba(255, 255, 255, 0.2);
+		transform: translateY(-3px);
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	}
+
+	.social-icon-link svg {
+		width: 20px;
+		height: 20px;
 	}
 
 	/* Container */
@@ -138,116 +493,533 @@ import Layout from '../layouts/Layout.astro';
 		padding: 0 2rem;
 	}
 
-	/* About Section */
-	.about {
+	/* Roles Section */
+	.roles {
+		padding: 4rem 0;
+		background: #ffffff;
+		text-align: center;
+	}
+
+	.roles-title {
+		font-family: 'Inter', sans-serif;
+		font-size: clamp(1.5rem, 3vw, 2.5rem);
+		font-weight: 400;
+		color: #1a1a1a;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		margin: 0;
+	}
+
+	/* Quote Section */
+	.quote-section {
+		padding: 5rem 0;
+		background: #f8f9fa;
+	}
+
+	.quote {
+		font-family: 'Playfair Display', serif;
+		font-size: clamp(1.5rem, 3vw, 2.25rem);
+		font-style: italic;
+		color: #1a1a1a;
+		text-align: center;
+		max-width: 900px;
+		margin: 0 auto;
+		line-height: 1.6;
+		padding: 0 2rem;
+	}
+
+	.quote cite {
+		display: block;
+		margin-top: 1.5rem;
+		font-size: 1rem;
+		font-style: normal;
+		color: #667eea;
+		font-weight: 600;
+	}
+
+	/* Award Section */
+	.award-section {
 		padding: 5rem 0;
 		background: #ffffff;
 	}
 
-	.section-title {
+	.award-content {
+		max-width: 800px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.award-title {
+		font-family: 'Playfair Display', serif;
 		font-size: clamp(2rem, 4vw, 3rem);
 		font-weight: 600;
 		color: #1a1a1a;
 		margin: 0 0 2rem 0;
+	}
+
+	.award-text {
+		font-family: 'Inter', sans-serif;
+		font-size: 1.125rem;
+		line-height: 1.8;
+		color: #4a4a4a;
+		margin: 0;
+	}
+
+	/* About Section */
+	.about-section {
+		padding: 5rem 0;
+		background: #f8f9fa;
+	}
+
+	.section-heading {
+		font-family: 'Playfair Display', serif;
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 600;
+		color: #1a1a1a;
+		margin: 0 0 3rem 0;
 		text-align: center;
 		position: relative;
 		padding-bottom: 1rem;
 	}
 
-	.section-title::after {
+	.section-heading::after {
 		content: '';
 		position: absolute;
 		bottom: 0;
 		left: 50%;
 		transform: translateX(-50%);
-		width: 60px;
+		width: 80px;
 		height: 3px;
 		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 	}
 
-	.about-text {
+	.about-grid {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.about-text-content {
+		font-family: 'Inter', sans-serif;
 		font-size: 1.125rem;
 		line-height: 1.8;
 		color: #4a4a4a;
-		max-width: 700px;
-		margin: 0 auto;
-		text-align: center;
 	}
 
-	/* Social Section */
-	.social {
+	.about-text-content p {
+		margin: 0 0 1.5rem 0;
+	}
+
+	.about-text-content strong {
+		color: #667eea;
+		font-weight: 600;
+	}
+
+	/* Live & Studio Section */
+	.live-studio-section {
+		padding: 5rem 0;
+		background: #ffffff;
+	}
+
+	.live-studio-grid {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.live-studio-text {
+		font-family: 'Inter', sans-serif;
+		font-size: 1.125rem;
+		line-height: 1.8;
+		color: #4a4a4a;
+	}
+
+	.live-studio-text p {
+		margin: 0 0 1.5rem 0;
+	}
+
+	/* Skills Section */
+	.skills-section {
 		padding: 5rem 0;
 		background: #f8f9fa;
 	}
 
-	.social-links {
-		display: flex;
-		justify-content: center;
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 		gap: 2rem;
-		flex-wrap: wrap;
+		max-width: 1000px;
+		margin: 0 auto;
 	}
 
-	.social-link {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.75rem;
-		padding: 1rem 2rem;
+	.skill-card {
+		background: #ffffff;
+		padding: 3rem 2rem;
+		text-align: center;
+		border-radius: 10px;
+		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease;
+		border-top: 4px solid #667eea;
+	}
+
+	.skill-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+	}
+
+	.skill-title {
+		font-family: 'Playfair Display', serif;
+		font-size: 1.75rem;
+		font-weight: 600;
+		color: #1a1a1a;
+		margin: 0;
+		line-height: 1.3;
+	}
+
+	/* Lessons Section */
+	.lessons-section {
+		padding: 5rem 0;
+		background: #ffffff;
+	}
+
+	.lessons-content {
+		max-width: 900px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.lessons-content p {
+		font-family: 'Inter', sans-serif;
+		font-size: 1.125rem;
+		line-height: 1.8;
+		color: #4a4a4a;
+		margin: 0;
+	}
+
+	/* Tips Section */
+	.tips-section {
+		padding: 5rem 0;
+		background: #f8f9fa;
+	}
+
+	.tips-content {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.tips-content p {
+		font-family: 'Inter', sans-serif;
+		font-size: 1.125rem;
+		line-height: 1.8;
+		color: #4a4a4a;
+		margin: 0 0 1.5rem 0;
+	}
+
+	.enroll-btn {
+		display: inline-block;
+		margin-top: 2rem;
+		padding: 1rem 2.5rem;
 		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 		color: #ffffff;
 		text-decoration: none;
+		font-family: 'Inter', sans-serif;
+		font-weight: 600;
+		font-size: 1rem;
 		border-radius: 50px;
-		font-weight: 500;
-		font-size: 1.125rem;
 		transition: all 0.3s ease;
-		box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+		box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 	}
 
-	.social-link:hover {
+	.enroll-btn:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+	}
+
+	/* Tours Section */
+	.tours-section {
+		padding: 5rem 0;
+		background: #ffffff;
+	}
+
+	.tours-list {
+		max-width: 900px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.tour-item {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		padding: 2rem;
+		background: #f8f9fa;
+		border-radius: 10px;
+		transition: all 0.3s ease;
+		border-left: 4px solid #667eea;
+	}
+
+	.tour-item:hover {
+		background: #ffffff;
+		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+		transform: translateX(5px);
+	}
+
+	.tour-date {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		min-width: 80px;
+		padding: 1rem;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		border-radius: 10px;
+		color: #ffffff;
+	}
+
+	.tour-day {
+		font-family: 'Playfair Display', serif;
+		font-size: 2rem;
+		font-weight: 700;
+		line-height: 1;
+	}
+
+	.tour-month {
+		font-family: 'Inter', sans-serif;
+		font-size: 0.875rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		margin-top: 0.5rem;
+	}
+
+	.tour-details {
+		flex: 1;
+	}
+
+	.tour-location {
+		font-family: 'Playfair Display', serif;
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: #1a1a1a;
+		margin: 0 0 0.5rem 0;
+	}
+
+	.tour-venue {
+		font-family: 'Inter', sans-serif;
+		font-size: 1rem;
+		color: #4a4a4a;
+		margin: 0;
+	}
+
+	.tour-btn {
+		padding: 0.75rem 1.5rem;
+		background: #1a1a1a;
+		color: #ffffff;
+		text-decoration: none;
+		font-family: 'Inter', sans-serif;
+		font-weight: 500;
+		font-size: 0.95rem;
+		border-radius: 5px;
+		transition: all 0.3s ease;
+		white-space: nowrap;
+	}
+
+	.tour-btn:hover {
+		background: #667eea;
 		transform: translateY(-2px);
-		box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+		box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 	}
 
-	.social-link:active {
-		transform: translateY(0);
+	/* Newsletter Section */
+	.newsletter-section {
+		padding: 5rem 0;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: #ffffff;
+		text-align: center;
 	}
 
-	.social-link svg {
-		width: 24px;
-		height: 24px;
+	.newsletter-title {
+		font-family: 'Playfair Display', serif;
+		font-size: clamp(1.75rem, 4vw, 2.5rem);
+		font-weight: 600;
+		margin: 0 0 1rem 0;
+	}
+
+	.newsletter-subtitle {
+		font-family: 'Inter', sans-serif;
+		font-size: 1.125rem;
+		margin: 0 0 2rem 0;
+		opacity: 0.9;
+	}
+
+	.newsletter-form {
+		display: flex;
+		gap: 1rem;
+		max-width: 500px;
+		margin: 0 auto;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.newsletter-input {
+		flex: 1;
+		min-width: 250px;
+		padding: 1rem 1.5rem;
+		border: none;
+		border-radius: 50px;
+		font-family: 'Inter', sans-serif;
+		font-size: 1rem;
+		background: rgba(255, 255, 255, 0.95);
+		color: #1a1a1a;
+	}
+
+	.newsletter-input::placeholder {
+		color: #999;
+	}
+
+	.newsletter-input:focus {
+		outline: none;
+		background: #ffffff;
+		box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+	}
+
+	.newsletter-btn {
+		padding: 1rem 2.5rem;
+		background: #1a1a1a;
+		color: #ffffff;
+		border: none;
+		border-radius: 50px;
+		font-family: 'Inter', sans-serif;
+		font-weight: 600;
+		font-size: 1rem;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		white-space: nowrap;
+	}
+
+	.newsletter-btn:hover {
+		background: #2d2d2d;
+		transform: translateY(-2px);
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 	}
 
 	/* Footer */
 	.footer {
-		padding: 2rem 0;
+		padding: 4rem 0 2rem;
 		background: #1a1a1a;
 		color: rgba(255, 255, 255, 0.7);
-		text-align: center;
 	}
 
-	.footer p {
+	.footer-content {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 3rem;
+		margin-bottom: 3rem;
+	}
+
+	.footer-heading {
+		font-family: 'Playfair Display', serif;
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: #ffffff;
+		margin: 0 0 1rem 0;
+	}
+
+	.footer-list {
+		list-style: none;
+		padding: 0;
 		margin: 0;
+	}
+
+	.footer-list li {
+		font-family: 'Inter', sans-serif;
+		font-size: 0.95rem;
+		margin: 0.5rem 0;
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	.footer-nav {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+		flex-wrap: wrap;
+		margin: 2rem 0;
+		padding: 2rem 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.footer-nav a {
+		font-family: 'Inter', sans-serif;
+		color: rgba(255, 255, 255, 0.7);
+		text-decoration: none;
+		font-size: 0.95rem;
+		transition: color 0.3s ease;
+	}
+
+	.footer-nav a:hover {
+		color: #ffffff;
+	}
+
+	.footer-copyright {
+		text-align: center;
+		padding-top: 2rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.footer-copyright p {
+		font-family: 'Inter', sans-serif;
 		font-size: 0.9rem;
+		margin: 0;
+		color: rgba(255, 255, 255, 0.5);
 	}
 
 	/* Responsive Design */
 	@media (max-width: 768px) {
+		.nav-menu {
+			display: none;
+		}
+
+		.nav-menu.active {
+			display: flex;
+		}
+
+		.mobile-menu-toggle {
+			display: flex;
+		}
+
 		.hero {
-			min-height: 80vh;
+			padding-top: 100px;
 		}
 
-		.about,
-		.social {
-			padding: 3rem 0;
+		.tour-item {
+			flex-direction: column;
+			text-align: center;
 		}
 
-		.about-text {
-			font-size: 1rem;
-			padding: 0 1rem;
+		.tour-date {
+			width: 100%;
 		}
 
-		.social-link {
-			padding: 0.875rem 1.5rem;
-			font-size: 1rem;
+		.tour-btn {
+			width: 100%;
+		}
+
+		.newsletter-form {
+			flex-direction: column;
+		}
+
+		.newsletter-input,
+		.newsletter-btn {
+			width: 100%;
+		}
+
+		.footer-content {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.footer-nav {
+			flex-direction: column;
+			gap: 1rem;
 		}
 	}
 
@@ -256,12 +1028,115 @@ import Layout from '../layouts/Layout.astro';
 			font-size: 2.5rem;
 		}
 
-		.hero-subtitle {
+		.hero-tagline {
 			font-size: 1rem;
 		}
 
-		.section-title {
+		.section-heading {
 			font-size: 1.75rem;
 		}
+
+		.skills-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	/* Mobile Menu Active State */
+	.nav-menu.active {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background: rgba(255, 255, 255, 0.98);
+		backdrop-filter: blur(10px);
+		padding: 2rem;
+		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+		gap: 1.5rem;
+	}
+
+	.mobile-menu-toggle.active span:nth-child(1) {
+		transform: rotate(45deg) translate(8px, 8px);
+	}
+
+	.mobile-menu-toggle.active span:nth-child(2) {
+		opacity: 0;
+	}
+
+	.mobile-menu-toggle.active span:nth-child(3) {
+		transform: rotate(-45deg) translate(7px, -7px);
 	}
 </style>
+
+<script>
+	// Mobile menu toggle
+	document.addEventListener('DOMContentLoaded', () => {
+		const menuToggle = document.querySelector('.mobile-menu-toggle') as HTMLButtonElement | null;
+		const navMenu = document.querySelector('.nav-menu') as HTMLElement | null;
+
+		if (menuToggle && navMenu) {
+			menuToggle.addEventListener('click', () => {
+				menuToggle.classList.toggle('active');
+				navMenu.classList.toggle('active');
+			});
+
+			// Close menu when clicking on a link
+			const navLinks = navMenu.querySelectorAll('a');
+			navLinks.forEach(link => {
+				link.addEventListener('click', () => {
+					menuToggle.classList.remove('active');
+					navMenu.classList.remove('active');
+				});
+			});
+		}
+
+		// Smooth scroll for anchor links
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			anchor.addEventListener('click', (e: Event) => {
+				e.preventDefault();
+				const href = (anchor as HTMLAnchorElement).getAttribute('href');
+				if (href) {
+					const target = document.querySelector(href);
+					if (target) {
+						target.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start'
+						});
+					}
+				}
+			});
+		});
+
+		// Newsletter form handling
+		const newsletterForm = document.querySelector('.newsletter-form') as HTMLFormElement | null;
+		if (newsletterForm) {
+			newsletterForm.addEventListener('submit', (e) => {
+				e.preventDefault();
+				const emailInput = newsletterForm.querySelector('.newsletter-input') as HTMLInputElement | null;
+				if (emailInput && emailInput.value) {
+					alert('Thank you for subscribing! You will receive updates at ' + emailInput.value);
+					newsletterForm.reset();
+				}
+			});
+		}
+
+		// Navbar scroll effect
+		let lastScroll = 0;
+		const navbar = document.querySelector('.navbar') as HTMLElement | null;
+		
+		if (navbar) {
+			window.addEventListener('scroll', () => {
+				const currentScroll = window.pageYOffset;
+				
+				if (currentScroll > 100) {
+					navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+				} else {
+					navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+				}
+				
+				lastScroll = currentScroll;
+			});
+		}
+	});
+</script>
