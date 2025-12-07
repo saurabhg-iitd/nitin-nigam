@@ -230,51 +230,9 @@ import Layout from '../layouts/Layout.astro';
 		<section id="shows" class="tours-section">
 			<div class="container">
 				<h3 class="section-heading">Next Tours</h3>
-				<div class="tours-list">
-					<div class="tour-item">
-						<div class="tour-date">
-							<span class="tour-day">23</span>
-							<span class="tour-month">Mar</span>
-						</div>
-						<div class="tour-details">
-							<h4 class="tour-location">Mumbai, India</h4>
-							<p class="tour-venue">Vivamus magna justo, lacinia eget consectetur sed</p>
-						</div>
-						<a href="#contact" class="tour-btn">Buy A Ticket</a>
-					</div>
-					<div class="tour-item">
-						<div class="tour-date">
-							<span class="tour-day">06</span>
-							<span class="tour-month">Jun</span>
-						</div>
-						<div class="tour-details">
-							<h4 class="tour-location">Delhi, India</h4>
-							<p class="tour-venue">Vivamus magna justo, lacinia eget consectetur sed</p>
-						</div>
-						<a href="#contact" class="tour-btn">Buy A Ticket</a>
-					</div>
-					<div class="tour-item">
-						<div class="tour-date">
-							<span class="tour-day">17</span>
-							<span class="tour-month">Aug</span>
-						</div>
-						<div class="tour-details">
-							<h4 class="tour-location">Bangalore, India</h4>
-							<p class="tour-venue">Vivamus magna justo, lacinia eget consectetur sed</p>
-						</div>
-						<a href="#contact" class="tour-btn">Buy A Ticket</a>
-					</div>
-					<div class="tour-item">
-						<div class="tour-date">
-							<span class="tour-day">25</span>
-							<span class="tour-month">Sep</span>
-						</div>
-						<div class="tour-details">
-							<h4 class="tour-location">Pune, India</h4>
-							<p class="tour-venue">Vivamus magna justo, lacinia eget consectetur sed</p>
-						</div>
-						<a href="#contact" class="tour-btn">Buy A Ticket</a>
-					</div>
+				<div class="tours-list" id="tours-list">
+					<!-- Shows will be loaded dynamically from D1 database -->
+					<div class="tours-loading">Loading shows...</div>
 				</div>
 			</div>
 		</section>
@@ -820,99 +778,221 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	/* Tours Section */
-	.tours-section {
+	:global(.tours-section) {
 		padding: 5rem 0;
 		background: #ffffff;
 	}
 
-	.tours-list {
-		max-width: 900px;
+	:global(.tours-list) {
+		max-width: 1200px;
 		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+		gap: 2.5rem;
+		padding: 2rem 1rem;
+	}
+
+	:global(.tours-loading),
+	:global(.tours-empty),
+	:global(.tours-error) {
+		text-align: center;
+		padding: 3rem;
+		font-family: 'Inter', sans-serif;
+		color: #4a4a4a;
+		font-size: 1.125rem;
+		grid-column: 1 / -1;
+	}
+
+	:global(.tour-item) {
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
+		background: #ffffff;
+		border-radius: 20px;
+		overflow: hidden;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+		transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+		border: 1px solid rgba(0, 0, 0, 0.06);
+		position: relative;
+		height: 100%;
+		box-sizing: border-box;
 	}
 
-	.tour-item {
+	:global(.tour-item::before) {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	:global(.tour-item:hover) {
+		transform: translateY(-12px);
+		box-shadow: 0 24px 40px rgba(0, 0, 0, 0.12), 0 12px 16px rgba(0, 0, 0, 0.08);
+		border-color: rgba(102, 126, 234, 0.3);
+	}
+
+	:global(.tour-item:hover::before) {
+		opacity: 1;
+	}
+
+	:global(.tour-item-header) {
 		display: flex;
 		align-items: center;
-		gap: 2rem;
-		padding: 2rem;
-		background: #f8f9fa;
-		border-radius: 10px;
-		transition: all 0.3s ease;
-		border-left: 4px solid #667eea;
+		justify-content: center;
+		padding: 2rem 1.5rem;
+		background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 	}
 
-	.tour-item:hover {
-		background: #ffffff;
-		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-		transform: translateX(5px);
-	}
-
-	.tour-date {
+	:global(.tour-date) {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		min-width: 80px;
-		padding: 1rem;
+		min-width: 85px;
+		width: 85px;
+		height: 85px;
 		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-		border-radius: 10px;
+		border-radius: 16px;
 		color: #ffffff;
+		box-shadow: 0 6px 20px rgba(102, 126, 234, 0.35);
+		position: relative;
+		overflow: hidden;
 	}
 
-	.tour-day {
+	:global(.tour-date::before) {
+		content: '';
+		position: absolute;
+		top: -50%;
+		left: -50%;
+		width: 200%;
+		height: 200%;
+		background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	:global(.tour-item:hover .tour-date::before) {
+		opacity: 1;
+	}
+
+	:global(.tour-day) {
 		font-family: 'Playfair Display', serif;
 		font-size: 2rem;
 		font-weight: 700;
 		line-height: 1;
+		position: relative;
+		z-index: 1;
+		letter-spacing: -0.02em;
 	}
 
-	.tour-month {
+	:global(.tour-month) {
 		font-family: 'Inter', sans-serif;
-		font-size: 0.875rem;
+		font-size: 0.8rem;
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		margin-top: 0.5rem;
+		letter-spacing: 0.2em;
+		margin-top: 0.35rem;
+		font-weight: 600;
+		opacity: 0.95;
+		position: relative;
+		z-index: 1;
 	}
 
-	.tour-details {
+	:global(.tour-details) {
 		flex: 1;
+		padding: 2rem 1.5rem 1.5rem 1.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		box-sizing: border-box;
+		min-width: 0;
 	}
 
-	.tour-location {
+	:global(.tour-location) {
 		font-family: 'Playfair Display', serif;
 		font-size: 1.5rem;
 		font-weight: 600;
 		color: #1a1a1a;
-		margin: 0 0 0.5rem 0;
+		margin: 0;
+		line-height: 1.3;
+		letter-spacing: -0.01em;
 	}
 
-	.tour-venue {
+	:global(.tour-venue) {
 		font-family: 'Inter', sans-serif;
 		font-size: 1rem;
-		color: #4a4a4a;
+		color: #6b7280;
 		margin: 0;
+		line-height: 1.7;
+		display: flex;
+		align-items: flex-start;
+		gap: 0.75rem;
 	}
 
-	.tour-btn {
-		padding: 0.75rem 1.5rem;
-		background: #1a1a1a;
+	:global(.tour-venue::before) {
+		content: '📍';
+		font-size: 1.1rem;
+		flex-shrink: 0;
+		margin-top: 0.1rem;
+	}
+
+	:global(.tour-item-footer) {
+		padding: 0 1.5rem 1.5rem 1.5rem;
+		margin-top: auto;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	:global(.tour-btn) {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		padding: 1rem 1.5rem;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 		color: #ffffff;
 		text-decoration: none;
 		font-family: 'Inter', sans-serif;
-		font-weight: 500;
-		font-size: 0.95rem;
-		border-radius: 5px;
+		font-weight: 600;
+		font-size: 1rem;
+		border-radius: 12px;
 		transition: all 0.3s ease;
+		text-align: center;
+		box-shadow: 0 4px 14px rgba(102, 126, 234, 0.35);
+		position: relative;
+		overflow: hidden;
+		letter-spacing: 0.02em;
+		box-sizing: border-box;
 		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 
-	.tour-btn:hover {
-		background: #667eea;
-		transform: translateY(-2px);
-		box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+	:global(.tour-btn::before) {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+		transition: left 0.5s ease;
+	}
+
+	:global(.tour-btn:hover::before) {
+		left: 100%;
+	}
+
+	:global(.tour-btn:hover) {
+		transform: translateY(-3px);
+		box-shadow: 0 8px 24px rgba(102, 126, 234, 0.45);
+		background: linear-gradient(135deg, #5a6fd8 0%, #6a3f92 100%);
+	}
+
+	:global(.tour-btn:active) {
+		transform: translateY(0);
 	}
 
 	/* Newsletter Section */
@@ -1076,17 +1156,13 @@ import Layout from '../layouts/Layout.astro';
 			padding-top: 100px;
 		}
 
+		.tours-list {
+			grid-template-columns: 1fr;
+			padding: 0 1rem;
+		}
+
 		.tour-item {
-			flex-direction: column;
-			text-align: center;
-		}
-
-		.tour-date {
-			width: 100%;
-		}
-
-		.tour-btn {
-			width: 100%;
+			max-width: 100%;
 		}
 
 		.newsletter-form {
@@ -1128,6 +1204,51 @@ import Layout from '../layouts/Layout.astro';
 
 		.video-portfolio-grid {
 			grid-template-columns: 1fr;
+		}
+
+		:global(.tours-list) {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+			padding: 1rem 0.5rem;
+		}
+
+		:global(.tour-item-header) {
+			padding: 1.75rem 1.25rem;
+		}
+
+		:global(.tour-date) {
+			min-width: 75px;
+			width: 75px;
+			height: 75px;
+		}
+
+		:global(.tour-day) {
+			font-size: 1.75rem;
+		}
+
+		:global(.tour-month) {
+			font-size: 0.75rem;
+		}
+
+		:global(.tour-details) {
+			padding: 1.75rem 1.25rem 1.25rem 1.25rem;
+		}
+
+		:global(.tour-location) {
+			font-size: 1.375rem;
+		}
+
+		:global(.tour-venue) {
+			font-size: 0.95rem;
+		}
+
+		:global(.tour-item-footer) {
+			padding: 0 1.25rem 1.25rem 1.25rem;
+		}
+
+		:global(.tour-btn) {
+			padding: 0.95rem 1.25rem;
+			font-size: 0.95rem;
 		}
 	}
 
@@ -1201,12 +1322,54 @@ import Layout from '../layouts/Layout.astro';
 		// Newsletter form handling
 		const newsletterForm = document.querySelector('.newsletter-form') as HTMLFormElement | null;
 		if (newsletterForm) {
-			newsletterForm.addEventListener('submit', (e) => {
+			newsletterForm.addEventListener('submit', async (e) => {
 				e.preventDefault();
 				const emailInput = newsletterForm.querySelector('.newsletter-input') as HTMLInputElement | null;
-				if (emailInput && emailInput.value) {
-					alert('Thank you for subscribing! You will receive updates at ' + emailInput.value);
-					newsletterForm.reset();
+				const submitButton = newsletterForm.querySelector('.newsletter-btn') as HTMLButtonElement | null;
+				
+				if (!emailInput || !emailInput.value) {
+					alert('Please enter a valid email address');
+					return;
+				}
+
+				const email = emailInput.value.trim();
+				
+				// Disable button during submission
+				if (submitButton) {
+					submitButton.disabled = true;
+					submitButton.textContent = 'SUBSCRIBING...';
+				}
+
+				try {
+					const apiUrl = import.meta.env.PROD 
+						? 'https://api.nitinnigam.me/api/newsletter/subscribe'
+						: 'http://localhost:8787/api/newsletter/subscribe';
+					
+					const response = await fetch(apiUrl, {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify({ email }),
+					});
+
+					const data = await response.json();
+
+					if (response.ok && data.success) {
+						alert(data.message || 'Thank you for subscribing! You will receive updates at ' + email);
+						newsletterForm.reset();
+					} else {
+						alert(data.error || 'Failed to subscribe. Please try again later.');
+					}
+				} catch (error) {
+					console.error('Newsletter subscription error:', error);
+					alert('Failed to subscribe. Please try again later.');
+				} finally {
+					// Re-enable button
+					if (submitButton) {
+						submitButton.disabled = false;
+						submitButton.textContent = 'SUBSCRIBE';
+					}
 				}
 			});
 		}
@@ -1236,5 +1399,104 @@ import Layout from '../layouts/Layout.astro';
 			instagramScript.src = '//www.instagram.com/embed.js';
 			document.body.appendChild(instagramScript);
 		})();
+
+		// Load shows from D1 database API
+		async function loadShows() {
+			const toursList = document.getElementById('tours-list');
+			if (!toursList) {
+				console.error('tours-list element not found');
+				return;
+			}
+
+			try {
+				// Use production API URL
+				// In development, you can change this to 'http://localhost:8787/api/shows' if testing locally
+				const apiUrl = 'https://api.nitinnigam.me/api/shows';
+				
+				console.log('Fetching shows from:', apiUrl);
+				const response = await fetch(apiUrl);
+				
+				if (!response.ok) {
+					throw new Error(`Failed to fetch shows: ${response.status} ${response.statusText}`);
+				}
+				
+				const data = await response.json();
+				console.log('API response:', data);
+				
+				const shows = data.result || [];
+
+				if (shows.length === 0) {
+					toursList.innerHTML = '<div class="tours-empty">Currently no shows available.</div>';
+					return;
+				}
+
+				// Format month names
+				const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+				const showsHTML = shows.map((show: any) => {
+					// Parse the ISO date string (e.g., "2025-03-15T19:00:00Z")
+					let day = '';
+					let month = '';
+					
+					if (show.date) {
+						try {
+							const showDate = new Date(show.date);
+							// Check if date is valid
+							if (!isNaN(showDate.getTime())) {
+								day = showDate.getDate().toString();
+								month = monthNames[showDate.getMonth()];
+							} else {
+								// Fallback: try to parse date string directly
+								const dateMatch = show.date.match(/(\d{4})-(\d{2})-(\d{2})/);
+								if (dateMatch) {
+									day = parseInt(dateMatch[3], 10).toString();
+									const monthIndex = parseInt(dateMatch[2], 10) - 1;
+									month = monthNames[monthIndex] || 'Jan';
+								}
+							}
+						} catch (e) {
+							console.error('Error parsing date:', e, show);
+							day = '?';
+							month = '?';
+						}
+					}
+					
+					// Use provided day/month if available, otherwise use parsed values
+					day = show.day ? show.day.toString() : day;
+					month = show.month || month;
+					
+					const location = show.location || '';
+					const venue = show.venue || '';
+					const ticketUrl = show.ticket_url || '#contact';
+
+					return `
+						<div class="tour-item">
+							<div class="tour-item-header">
+								<div class="tour-date">
+									<span class="tour-day">${day}</span>
+									<span class="tour-month">${month}</span>
+								</div>
+							</div>
+							<div class="tour-details">
+								<h4 class="tour-location">${location}</h4>
+								<p class="tour-venue">${venue}</p>
+							</div>
+							<div class="tour-item-footer">
+								<a href="${ticketUrl}" class="tour-btn" target="_blank" rel="noopener noreferrer">Buy A Ticket</a>
+							</div>
+						</div>
+					`;
+				}).join('');
+
+				console.log('Generated HTML for', shows.length, 'shows');
+				toursList.innerHTML = showsHTML;
+			} catch (error) {
+				console.error('Error loading shows:', error);
+				toursList.innerHTML = `<div class="tours-error">Unable to load shows. Error: ${error instanceof Error ? error.message : 'Unknown error'}</div>`;
+			}
+		}
+
+		// Load shows when page loads
+		loadShows();
 	});
 </script>
